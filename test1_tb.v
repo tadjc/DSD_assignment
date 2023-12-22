@@ -26,9 +26,13 @@ always #5 clk = ~clk;
 initial
     begin
 
-        #10 data_in1 = 5;
-        #10 data_in2 = 6;
-        
+        #1
+        data_in1 = 16'b0000000000001000; #1;
+        data_in2 = 16'b0100000000001000; #1;
+        //data_in2 = 16'b1000000000001000; #50;
+        //data_in1 = 16'b0000000000001000; #1;
+
+       
     end
 
 initial
@@ -36,6 +40,7 @@ initial
     
         $dumpfile("test1_tb.vcd");
         $dumpvars(0,test1_tb);
+        $display("End of test!!!");
 
     end
 

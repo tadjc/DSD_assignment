@@ -1,24 +1,4 @@
-module MUXR(
-
-hrdata_1,
-hrdata_2,
-hrdata_3,
-
-hreadyout_1,
-hreadyout_2,
-hreadyout_3,
-
-hresp_1,
-hresp_2,
-hresp_3,
-
-sel,
-
-hrdata,
-hreadyout,
-hresponse
-
-);
+module MUXR(hrdata,hreadyout,hresponse,hrdata_1,hrdata_2,hrdata_3,hreadyout_1,hreadyout_2,hreadyout_3,hresp_1,hresp_2,hresp_3,sel);
 
 
 input [31:0] hrdata_1;
@@ -33,16 +13,16 @@ input hresp_1;
 input hresp_2;
 input hresp_3;
 
-input [1:0] sel
+input [2:0] sel;
 
 output reg [31:0] hrdata;
-output reg hrdata;
+output reg hreadyout;
 output reg hresponse;
 
 
 always @(*)
     case (sel)
-        2'b00:
+        3'b000:
             begin
 
                 hrdata = hrdata_1;
@@ -52,7 +32,7 @@ always @(*)
             end
 
 
-        2'b01:
+        3'b001:
             begin
 
                 hrdata = hrdata_2;
@@ -61,7 +41,7 @@ always @(*)
 
             end
 
-        2'b10:
+        3'b010:
             begin
 
                 hrdata = hrdata_3;
@@ -73,9 +53,9 @@ always @(*)
        default:
             begin
 
-                hrdata = hrdata_2;
-                hreadyout = hreadyout_2;
-                hresponse = hresp_2;
+                hrdata = 0;
+                hreadyout = 1'b0;
+                hresponse = 1'b0;
 
             end
 

@@ -1,0 +1,158 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000002f9ab6d9450 .scope module, "MUXR_tb" "MUXR_tb" 2 4;
+ .timescale -9 -9;
+v000002f9ab6e4d80_0 .net "hrdata", 31 0, v000002f9ab87eb70_0;  1 drivers
+v000002f9ab6e4e20_0 .var "hrdata_1", 31 0;
+v000002f9ab6e4ec0_0 .var "hrdata_2", 31 0;
+v000002f9ab73cf70_0 .var "hrdata_3", 31 0;
+v000002f9ab73ced0_0 .net "hreadyout", 0 0, v000002f9ab87ed50_0;  1 drivers
+v000002f9ab73c250_0 .var "hreadyout_1", 0 0;
+v000002f9ab73ca70_0 .var "hreadyout_2", 0 0;
+v000002f9ab73c2f0_0 .var "hreadyout_3", 0 0;
+v000002f9ab73cbb0_0 .var "hresp_1", 0 0;
+v000002f9ab73cd90_0 .var "hresp_2", 0 0;
+v000002f9ab73cb10_0 .var "hresp_3", 0 0;
+v000002f9ab73c1b0_0 .net "hresponse", 0 0, v000002f9ab6e4c40_0;  1 drivers
+v000002f9ab73c430_0 .var "sel", 2 0;
+S_000002f9ab87e9e0 .scope module, "uut" "MUXR" 2 15, 3 1 0, S_000002f9ab6d9450;
+ .timescale -9 -9;
+    .port_info 0 /OUTPUT 32 "hrdata";
+    .port_info 1 /OUTPUT 1 "hreadyout";
+    .port_info 2 /OUTPUT 1 "hresponse";
+    .port_info 3 /INPUT 32 "hrdata_1";
+    .port_info 4 /INPUT 32 "hrdata_2";
+    .port_info 5 /INPUT 32 "hrdata_3";
+    .port_info 6 /INPUT 1 "hreadyout_1";
+    .port_info 7 /INPUT 1 "hreadyout_2";
+    .port_info 8 /INPUT 1 "hreadyout_3";
+    .port_info 9 /INPUT 1 "hresp_1";
+    .port_info 10 /INPUT 1 "hresp_2";
+    .port_info 11 /INPUT 1 "hresp_3";
+    .port_info 12 /INPUT 3 "sel";
+v000002f9ab87eb70_0 .var "hrdata", 31 0;
+v000002f9ab6b3140_0 .net "hrdata_1", 31 0, v000002f9ab6e4e20_0;  1 drivers
+v000002f9ab87ec10_0 .net "hrdata_2", 31 0, v000002f9ab6e4ec0_0;  1 drivers
+v000002f9ab87ecb0_0 .net "hrdata_3", 31 0, v000002f9ab73cf70_0;  1 drivers
+v000002f9ab87ed50_0 .var "hreadyout", 0 0;
+v000002f9ab6e4880_0 .net "hreadyout_1", 0 0, v000002f9ab73c250_0;  1 drivers
+v000002f9ab6e4920_0 .net "hreadyout_2", 0 0, v000002f9ab73ca70_0;  1 drivers
+v000002f9ab6e49c0_0 .net "hreadyout_3", 0 0, v000002f9ab73c2f0_0;  1 drivers
+v000002f9ab6e4a60_0 .net "hresp_1", 0 0, v000002f9ab73cbb0_0;  1 drivers
+v000002f9ab6e4b00_0 .net "hresp_2", 0 0, v000002f9ab73cd90_0;  1 drivers
+v000002f9ab6e4ba0_0 .net "hresp_3", 0 0, v000002f9ab73cb10_0;  1 drivers
+v000002f9ab6e4c40_0 .var "hresponse", 0 0;
+v000002f9ab6e4ce0_0 .net "sel", 2 0, v000002f9ab73c430_0;  1 drivers
+E_000002f9ab6edad0/0 .event anyedge, v000002f9ab6e4ce0_0, v000002f9ab6b3140_0, v000002f9ab6e4880_0, v000002f9ab6e4a60_0;
+E_000002f9ab6edad0/1 .event anyedge, v000002f9ab87ec10_0, v000002f9ab6e4920_0, v000002f9ab6e4b00_0, v000002f9ab87ecb0_0;
+E_000002f9ab6edad0/2 .event anyedge, v000002f9ab6e49c0_0, v000002f9ab6e4ba0_0;
+E_000002f9ab6edad0 .event/or E_000002f9ab6edad0/0, E_000002f9ab6edad0/1, E_000002f9ab6edad0/2;
+    .scope S_000002f9ab87e9e0;
+T_0 ;
+    %wait E_000002f9ab6edad0;
+    %load/vec4 v000002f9ab6e4ce0_0;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 3;
+    %cmp/u;
+    %jmp/1 T_0.0, 6;
+    %dup/vec4;
+    %pushi/vec4 1, 0, 3;
+    %cmp/u;
+    %jmp/1 T_0.1, 6;
+    %dup/vec4;
+    %pushi/vec4 2, 0, 3;
+    %cmp/u;
+    %jmp/1 T_0.2, 6;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v000002f9ab87eb70_0, 0, 32;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002f9ab87ed50_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002f9ab6e4c40_0, 0, 1;
+    %jmp T_0.4;
+T_0.0 ;
+    %load/vec4 v000002f9ab6b3140_0;
+    %store/vec4 v000002f9ab87eb70_0, 0, 32;
+    %load/vec4 v000002f9ab6e4880_0;
+    %store/vec4 v000002f9ab87ed50_0, 0, 1;
+    %load/vec4 v000002f9ab6e4a60_0;
+    %store/vec4 v000002f9ab6e4c40_0, 0, 1;
+    %jmp T_0.4;
+T_0.1 ;
+    %load/vec4 v000002f9ab87ec10_0;
+    %store/vec4 v000002f9ab87eb70_0, 0, 32;
+    %load/vec4 v000002f9ab6e4920_0;
+    %store/vec4 v000002f9ab87ed50_0, 0, 1;
+    %load/vec4 v000002f9ab6e4b00_0;
+    %store/vec4 v000002f9ab6e4c40_0, 0, 1;
+    %jmp T_0.4;
+T_0.2 ;
+    %load/vec4 v000002f9ab87ecb0_0;
+    %store/vec4 v000002f9ab87eb70_0, 0, 32;
+    %load/vec4 v000002f9ab6e49c0_0;
+    %store/vec4 v000002f9ab87ed50_0, 0, 1;
+    %load/vec4 v000002f9ab6e4ba0_0;
+    %store/vec4 v000002f9ab6e4c40_0, 0, 1;
+    %jmp T_0.4;
+T_0.4 ;
+    %pop/vec4 1;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_000002f9ab6d9450;
+T_1 ;
+    %vpi_call 2 19 "$dumpfile", "MUXR_tb.vcd" {0 0 0};
+    %vpi_call 2 20 "$dumpvars", 32'sb00000000000000000000000000000000, S_000002f9ab6d9450 {0 0 0};
+    %delay 20, 0;
+    %pushi/vec4 10, 0, 32;
+    %store/vec4 v000002f9ab6e4e20_0, 0, 32;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002f9ab73c250_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002f9ab73cbb0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 45, 0, 32;
+    %store/vec4 v000002f9ab6e4ec0_0, 0, 32;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002f9ab73ca70_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002f9ab73cd90_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 55, 0, 32;
+    %store/vec4 v000002f9ab73cf70_0, 0, 32;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002f9ab73c2f0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002f9ab73cb10_0, 0, 1;
+    %delay 1, 0;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 3;
+    %store/vec4 v000002f9ab73c430_0, 0, 3;
+    %delay 50, 0;
+    %pushi/vec4 1, 0, 3;
+    %store/vec4 v000002f9ab73c430_0, 0, 3;
+    %delay 50, 0;
+    %pushi/vec4 2, 0, 3;
+    %store/vec4 v000002f9ab73c430_0, 0, 3;
+    %delay 50, 0;
+    %vpi_call 2 45 "$display", "End of test!!!" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "MUXR_tb.v";
+    "./MUXR.v";

@@ -1,0 +1,111 @@
+$date
+	Fri Dec 22 20:46:09 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module MUXR_tb $end
+$var wire 1 ! hresponse $end
+$var wire 1 " hreadyout $end
+$var wire 32 # hrdata [31:0] $end
+$var reg 32 $ hrdata_1 [31:0] $end
+$var reg 32 % hrdata_2 [31:0] $end
+$var reg 32 & hrdata_3 [31:0] $end
+$var reg 1 ' hreadyout_1 $end
+$var reg 1 ( hreadyout_2 $end
+$var reg 1 ) hreadyout_3 $end
+$var reg 1 * hresp_1 $end
+$var reg 1 + hresp_2 $end
+$var reg 1 , hresp_3 $end
+$var reg 3 - sel [2:0] $end
+$scope module uut $end
+$var wire 32 . hrdata_1 [31:0] $end
+$var wire 32 / hrdata_2 [31:0] $end
+$var wire 32 0 hrdata_3 [31:0] $end
+$var wire 1 ' hreadyout_1 $end
+$var wire 1 ( hreadyout_2 $end
+$var wire 1 ) hreadyout_3 $end
+$var wire 1 * hresp_1 $end
+$var wire 1 + hresp_2 $end
+$var wire 1 , hresp_3 $end
+$var wire 3 1 sel [2:0] $end
+$var reg 32 2 hrdata [31:0] $end
+$var reg 1 " hreadyout $end
+$var reg 1 ! hresponse $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx 2
+bx 1
+bx 0
+bx /
+bx .
+bx -
+x,
+x+
+x*
+x)
+x(
+x'
+bx &
+bx %
+bx $
+bx #
+x"
+x!
+$end
+#20
+0!
+0"
+b0 #
+b0 2
+b1010 $
+b1010 .
+#21
+1'
+#22
+1*
+#23
+b101101 %
+b101101 /
+#24
+0(
+#25
+0+
+#26
+b110111 &
+b110111 0
+#27
+1)
+#28
+1,
+#49
+1!
+1"
+b1010 #
+b1010 2
+b0 -
+b0 1
+#99
+0!
+0"
+b101101 #
+b101101 2
+b1 -
+b1 1
+#149
+1!
+1"
+b110111 #
+b110111 2
+b10 -
+b10 1
+#199

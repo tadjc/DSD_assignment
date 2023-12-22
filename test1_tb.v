@@ -2,17 +2,21 @@
 `include "control_test_1.v"
 `include "data_path_test_1.v"
 `include "MUX.v"
+`include "MUXD.v"
 `include "PIPO.v"
+`include "PIPOD.v"
 `include "decoder.v"
 
 module test1_tb;
 
 reg [15:0] data_in1,data_in2;
+reg [31:0] data_in3,data_in4;
+
 reg clk, start;
 wire done;
 
-data_path_test_1 dpt1 (sel1,sel2,mux1,data_in1,data_in2,clk,hsel_1,hsel_2,hsel_3);
-control_test_1 cpt1(sel1,sel2,start,done,clk,mux1);
+data_path_test_1 dpt1 (sel1,sel2,sel3,sel4,mux1,mux2,data_in1,data_in2,data_in3,data_in4,clk,hsel_1,hsel_2,hsel_3);
+control_test_1 cpt1(sel1,sel2,sel3,sel4,start,done,clk,mux1,mux2);
 
 initial
     begin
@@ -29,8 +33,8 @@ initial
         #1
         data_in1 = 16'b0000000000001000; #1;
         data_in2 = 16'b0100000000001000; #1;
-        //data_in2 = 16'b1000000000001000; #50;
-        //data_in1 = 16'b0000000000001000; #1;
+        data_in3 = 10; #1;
+        data_in4 = 20; #1;
 
        
     end

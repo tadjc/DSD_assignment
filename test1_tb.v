@@ -11,7 +11,7 @@ reg [15:0] data_in1,data_in2;
 reg clk, start;
 wire done;
 
-data_path_test_1 dpt1 (sel1,sel2,mux1,data_in1,data_in2,clk,hesl_1,hsel_2,hsel_3);
+data_path_test_1 dpt1 (sel1,sel2,mux1,data_in1,data_in2,clk,hsel_1,hsel_2,hsel_3);
 control_test_1 cpt1(sel1,sel2,start,done,clk,mux1);
 
 initial

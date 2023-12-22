@@ -1,0 +1,54 @@
+$date
+	Fri Dec 22 12:36:10 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module decoder_test_tb $end
+$var wire 1 ! hsel_2 $end
+$var wire 1 " hsel_1 $end
+$var wire 1 # hsel_0 $end
+$var reg 16 $ haddr [15:0] $end
+$scope module uut $end
+$var wire 16 % haddr [15:0] $end
+$var reg 1 # hsel_0 $end
+$var reg 1 " hsel_1 $end
+$var reg 1 ! hsel_2 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx %
+bx $
+x#
+x"
+x!
+$end
+#20
+0!
+0"
+1#
+b1000 $
+b1000 %
+#40
+1"
+0#
+b100000001000000 $
+b100000001000000 %
+#60
+1!
+0"
+b1000000010000000 $
+b1000000010000000 %
+#80
+0!
+b1100000000010000 $
+b1100000000010000 %
+#100

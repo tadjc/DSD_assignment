@@ -1,18 +1,9 @@
-module decoder(
+module decoder( hsel_0, hsel_1, hsel_2, haddr);
 
-hsel_0,// hSelect  slave0  
-hsel_1,//hSelect  slave1  
-hsel_2,//hSelect  slave2  
-haddr,// Input address from the Address mux
-
-//sel_slave//To read data response MUX
-
-);
-
- input [15:0] haddr;
- output hsel_0;
- output hsel_1;
- output hsel_2;
+ input [15:0] haddr;  // Input address from the Address mux
+ output reg hsel_0; // hSelect  slave0
+ output reg hsel_1; //hSelect  slave1 
+ output reg hsel_2; //hSelect  slave2 
  
  always @(*)
     case (haddr[15:14])

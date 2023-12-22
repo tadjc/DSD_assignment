@@ -1,5 +1,5 @@
-Code for the simulation in "icarus" verilog software.
-  iverilog -o decoder_test_tb.vvp decoder_test_tb.v
+Code for the simulation in "icarus" verilog software. <br>
+  iverilog -o decoder_test_tb.vvp decoder_test_tb.v <br>
   vvp decoder_test_tb.vvp
 
 open the gtkwave by typing gtkwave on the vscode console and select the vcd file which created in previous step

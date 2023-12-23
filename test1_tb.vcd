@@ -1,5 +1,5 @@
 $date
-	Fri Dec 22 19:07:46 2023
+	Sat Dec 23 06:47:52 2023
 $end
 $version
 	Icarus Verilog
@@ -8,117 +8,181 @@ $timescale
 	1ns
 $end
 $scope module test1_tb $end
-$var wire 1 ! sel4 $end
-$var wire 1 " sel3 $end
-$var wire 1 # sel2 $end
-$var wire 1 $ sel1 $end
-$var wire 1 % mux2 $end
-$var wire 1 & mux1 $end
-$var wire 1 ' hsel_3 $end
-$var wire 1 ( hsel_2 $end
-$var wire 1 ) hsel_1 $end
-$var wire 1 * done $end
-$var reg 1 + clk $end
-$var reg 16 , data_in1 [15:0] $end
-$var reg 16 - data_in2 [15:0] $end
-$var reg 32 . data_in3 [31:0] $end
-$var reg 32 / data_in4 [31:0] $end
-$var reg 1 0 start $end
+$var wire 1 ! sel $end
+$var wire 1 " sel4 $end
+$var wire 1 # sel3 $end
+$var wire 1 $ sel2 $end
+$var wire 1 % sel1 $end
+$var wire 1 & mux2 $end
+$var wire 1 ' mux1 $end
+$var wire 1 ( hsel_3 $end
+$var wire 1 ) hsel_2 $end
+$var wire 1 * hsel_1 $end
+$var wire 1 + hresponse $end
+$var wire 1 , hreadyout $end
+$var wire 32 - hrdata [31:0] $end
+$var wire 1 . done $end
+$var reg 1 / clk $end
+$var reg 16 0 data_in1 [15:0] $end
+$var reg 16 1 data_in2 [15:0] $end
+$var reg 32 2 data_in3 [31:0] $end
+$var reg 32 3 data_in4 [31:0] $end
+$var reg 32 4 hrdata_1 [31:0] $end
+$var reg 32 5 hrdata_2 [31:0] $end
+$var reg 32 6 hrdata_3 [31:0] $end
+$var reg 1 7 hreadyout_1 $end
+$var reg 1 8 hreadyout_2 $end
+$var reg 1 9 hreadyout_3 $end
+$var reg 1 : hresp_1 $end
+$var reg 1 ; hresp_2 $end
+$var reg 1 < hresp_3 $end
+$var reg 1 = start $end
 $scope module cpt1 $end
-$var wire 1 + clk $end
-$var wire 1 0 start $end
-$var parameter 3 1 s0 $end
-$var parameter 3 2 s1 $end
-$var parameter 3 3 s2 $end
-$var parameter 3 4 s3 $end
-$var parameter 3 5 s4 $end
-$var parameter 3 6 s5 $end
-$var reg 1 * done $end
-$var reg 1 & mux1 $end
-$var reg 1 % mux2 $end
-$var reg 1 $ sel1 $end
-$var reg 1 # sel2 $end
-$var reg 1 " sel3 $end
-$var reg 1 ! sel4 $end
-$var reg 3 7 state [2:0] $end
+$var wire 1 / clk $end
+$var wire 1 = start $end
+$var parameter 3 > s0 $end
+$var parameter 3 ? s1 $end
+$var parameter 3 @ s2 $end
+$var parameter 3 A s3 $end
+$var parameter 3 B s4 $end
+$var parameter 3 C s5 $end
+$var reg 1 . done $end
+$var reg 1 ' mux1 $end
+$var reg 1 & mux2 $end
+$var reg 1 % sel1 $end
+$var reg 1 $ sel2 $end
+$var reg 1 # sel3 $end
+$var reg 1 " sel4 $end
+$var reg 3 D state [2:0] $end
 $upscope $end
 $scope module dpt1 $end
-$var wire 1 + clk $end
-$var wire 16 8 data_in1 [15:0] $end
-$var wire 16 9 data_in2 [15:0] $end
-$var wire 32 : data_in3 [31:0] $end
-$var wire 32 ; data_in4 [31:0] $end
-$var wire 1 & mux1 $end
-$var wire 1 % mux2 $end
-$var wire 1 $ sel1 $end
-$var wire 1 # sel2 $end
-$var wire 1 " sel3 $end
-$var wire 1 ! sel4 $end
-$var wire 16 < z [15:0] $end
-$var wire 16 = y [15:0] $end
-$var wire 16 > x [15:0] $end
-$var wire 32 ? r [31:0] $end
-$var wire 32 @ q [31:0] $end
-$var wire 32 A p [31:0] $end
-$var wire 1 ' hsel_3 $end
-$var wire 1 ( hsel_2 $end
-$var wire 1 ) hsel_1 $end
+$var wire 1 / clk $end
+$var wire 16 E data_in1 [15:0] $end
+$var wire 16 F data_in2 [15:0] $end
+$var wire 32 G data_in3 [31:0] $end
+$var wire 32 H data_in4 [31:0] $end
+$var wire 32 I hrdata_1 [31:0] $end
+$var wire 32 J hrdata_2 [31:0] $end
+$var wire 32 K hrdata_3 [31:0] $end
+$var wire 1 7 hreadyout_1 $end
+$var wire 1 8 hreadyout_2 $end
+$var wire 1 9 hreadyout_3 $end
+$var wire 1 : hresp_1 $end
+$var wire 1 ; hresp_2 $end
+$var wire 1 < hresp_3 $end
+$var wire 1 ' mux1 $end
+$var wire 1 & mux2 $end
+$var wire 3 L sel [2:0] $end
+$var wire 1 % sel1 $end
+$var wire 1 $ sel2 $end
+$var wire 1 # sel3 $end
+$var wire 1 " sel4 $end
+$var wire 16 M z [15:0] $end
+$var wire 16 N y [15:0] $end
+$var wire 16 O x [15:0] $end
+$var wire 32 P r [31:0] $end
+$var wire 32 Q q [31:0] $end
+$var wire 32 R p [31:0] $end
+$var wire 1 ( hsel_3 $end
+$var wire 1 ) hsel_2 $end
+$var wire 1 * hsel_1 $end
+$var wire 1 + hresponse $end
+$var wire 1 , hreadyout $end
+$var wire 32 S hrdata [31:0] $end
 $scope module HADDR1 $end
-$var wire 1 + clk $end
-$var wire 16 B din [15:0] $end
-$var wire 1 $ ld $end
-$var reg 16 C dout [15:0] $end
+$var wire 1 / clk $end
+$var wire 16 T din [15:0] $end
+$var wire 1 % ld $end
+$var reg 16 U dout [15:0] $end
 $upscope $end
 $scope module HADDR2 $end
-$var wire 1 + clk $end
-$var wire 16 D din [15:0] $end
-$var wire 1 # ld $end
-$var reg 16 E dout [15:0] $end
+$var wire 1 / clk $end
+$var wire 16 V din [15:0] $end
+$var wire 1 $ ld $end
+$var reg 16 W dout [15:0] $end
 $upscope $end
 $scope module HWDATA1 $end
-$var wire 1 + clk $end
-$var wire 32 F din [31:0] $end
-$var wire 1 " ld $end
-$var reg 32 G dout [31:0] $end
+$var wire 1 / clk $end
+$var wire 32 X din [31:0] $end
+$var wire 1 # ld $end
+$var reg 32 Y dout [31:0] $end
 $upscope $end
 $scope module HWDATA2 $end
-$var wire 1 + clk $end
-$var wire 32 H din [31:0] $end
-$var wire 1 ! ld $end
-$var reg 32 I dout [31:0] $end
+$var wire 1 / clk $end
+$var wire 32 Z din [31:0] $end
+$var wire 1 " ld $end
+$var reg 32 [ dout [31:0] $end
 $upscope $end
 $scope module addressmux $end
-$var wire 16 J in0 [15:0] $end
-$var wire 16 K in1 [15:0] $end
-$var wire 1 & sel $end
-$var wire 16 L out [15:0] $end
+$var wire 16 \ in0 [15:0] $end
+$var wire 16 ] in1 [15:0] $end
+$var wire 1 ' sel $end
+$var wire 16 ^ out [15:0] $end
 $upscope $end
 $scope module datamux $end
-$var wire 32 M in0 [31:0] $end
-$var wire 32 N in1 [31:0] $end
-$var wire 1 % sel $end
-$var wire 32 O out [31:0] $end
+$var wire 32 _ in0 [31:0] $end
+$var wire 32 ` in1 [31:0] $end
+$var wire 1 & sel $end
+$var wire 32 a out [31:0] $end
+$upscope $end
+$scope module readmux $end
+$var wire 32 b hrdata_1 [31:0] $end
+$var wire 32 c hrdata_2 [31:0] $end
+$var wire 32 d hrdata_3 [31:0] $end
+$var wire 1 7 hreadyout_1 $end
+$var wire 1 8 hreadyout_2 $end
+$var wire 1 9 hreadyout_3 $end
+$var wire 1 : hresp_1 $end
+$var wire 1 ; hresp_2 $end
+$var wire 1 < hresp_3 $end
+$var wire 3 e sel [2:0] $end
+$var reg 32 f hrdata [31:0] $end
+$var reg 1 , hreadyout $end
+$var reg 1 + hresponse $end
 $upscope $end
 $scope module test1_dec $end
-$var wire 16 P haddr [15:0] $end
-$var reg 1 ) hsel_0 $end
-$var reg 1 ( hsel_1 $end
-$var reg 1 ' hsel_2 $end
+$var wire 16 g haddr [15:0] $end
+$var reg 1 * hsel_0 $end
+$var reg 1 ) hsel_1 $end
+$var reg 1 ( hsel_2 $end
 $upscope $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 $comment Show the parameter values. $end
 $dumpall
-b101 6
-b100 5
-b11 4
-b10 3
-b1 2
-b0 1
+b101 C
+b100 B
+b11 A
+b10 @
+b1 ?
+b0 >
 $end
 #0
 $dumpvars
+bx g
+bx f
+bx e
+bx d
+bx c
+bx b
+bx a
+bx `
+bx _
+bx ^
+bx ]
+bx \
+bx [
+bx Z
+bx Y
+bx X
+bx W
+bx V
+bx U
+bx T
+bx S
+bx R
+bx Q
 bx P
 bx O
 bx N
@@ -132,25 +196,25 @@ bx G
 bx F
 bx E
 bx D
-bx C
-bx B
-bx A
-bx @
-bx ?
-bx >
-bx =
-bx <
-bx ;
-bx :
-bx 9
-bx 8
-bx 7
-x0
-bx /
-bx .
+x=
+x<
+x;
+x:
+x9
+x8
+x7
+bx 6
+bx 5
+bx 4
+bx 3
+bx 2
+bx 1
+bx 0
+0/
+x.
 bx -
-bx ,
-0+
+x,
+x+
 x*
 x)
 x(
@@ -163,577 +227,595 @@ x"
 x!
 $end
 #1
-b1000 ,
-b1000 8
-b1000 B
+b1000 0
+b1000 E
+b1000 T
 #2
-b100000000001000 -
-b100000000001000 9
-b100000000001000 D
+b10000000001000 1
+b10000000001000 F
+b10000000001000 V
 #3
-b1010 .
-b1010 :
-b1010 F
-10
-#4
-b10100 /
-b10100 ;
-b10100 H
-#5
-b0 7
-1+
-#6
-0*
-0%
-0!
-0"
-0&
-0#
-0$
-#10
-0+
-#15
-b1 7
-1+
-#16
-1$
-#20
-0+
-#25
-0'
-0(
-1)
-b1000 <
-b1000 L
-b1000 P
-b1000 >
-b1000 C
-b1000 J
-b10 7
-1+
-#26
-0)
-bx <
-bx L
-bx P
-1&
-1#
-0$
-#30
-0+
-#35
-1(
-b100000000001000 <
-b100000000001000 L
-b100000000001000 P
-b11 7
-b100000000001000 =
-b100000000001000 E
-b100000000001000 K
-1+
-#36
-0(
-1)
-b1000 <
-b1000 L
-b1000 P
-1"
-0&
-0#
-#40
-0+
-#45
-b1010 ?
-b1010 O
-b1010 A
+b1010 2
 b1010 G
-b1010 M
-b100 7
+b1010 X
+1=
+#4
+b10100 3
+b10100 H
+b10100 Z
+#5
+b0 D
+0+
+0,
+b0 -
+b0 S
+b0 f
+b11110 4
+b11110 I
+b11110 b
+1/
+#6
+0.
+0&
+0"
+0#
+0'
+0$
+0%
+b101000 5
+b101000 J
+b101000 c
+#7
+b110010 6
+b110010 K
+b110010 d
+#8
+17
+#9
+08
+#10
+09
+0/
+#11
+1:
+#12
+0;
+#13
+0<
+#15
+b1 D
+1/
+#16
+1%
+#20
+0/
+#25
+b101000 -
+b101000 S
+b101000 f
+1!
+b1 L
+b1 e
+0(
+0)
+1*
+b1000 M
+b1000 ^
+b1000 g
+b1000 O
+b1000 U
+b1000 \
+b10 D
+1/
+#26
 1+
+1,
+b11110 -
+b11110 S
+b11110 f
+0!
+b0 L
+b0 e
+0*
+bx M
+bx ^
+bx g
+1'
+1$
+0%
+#30
+0/
+#35
+0+
+0,
+b101000 -
+b101000 S
+b101000 f
+1!
+b1 L
+b1 e
+1*
+b10000000001000 M
+b10000000001000 ^
+b10000000001000 g
+b11 D
+b10000000001000 N
+b10000000001000 W
+b10000000001000 ]
+1/
+#36
+b1000 M
+b1000 ^
+b1000 g
+1#
+0'
+0$
+#40
+0/
+#45
+b1010 P
+b1010 a
+b1010 R
+b1010 Y
+b1010 _
+b100 D
+1/
 #46
-bx ?
-bx O
-1%
-1!
-0"
+bx P
+bx a
+1&
+1"
+0#
 #50
-0+
+0/
 #55
-b10100 ?
-b10100 O
-b101 7
-b10100 @
-b10100 I
-b10100 N
-1+
+b10100 P
+b10100 a
+b101 D
+b10100 Q
+b10100 [
+b10100 `
+1/
 #56
-b1010 ?
-b1010 O
-1*
-0%
-0!
+b1010 P
+b1010 a
+1.
+0&
+0"
 #60
-0+
+0/
 #65
-b0 7
-1+
+b0 D
+1/
 #66
-0*
+0.
 #70
-0+
+0/
 #75
-b1 7
-1+
+b1 D
+1/
 #76
-1$
+1%
 #80
-0+
+0/
 #85
-b10 7
-1+
+b10 D
+1/
 #86
-1(
-0)
-b100000000001000 <
-b100000000001000 L
-b100000000001000 P
-1&
-1#
-0$
+b10000000001000 M
+b10000000001000 ^
+b10000000001000 g
+1'
+1$
+0%
 #90
-0+
+0/
 #95
-b11 7
-1+
+b11 D
+1/
 #96
-0(
-1)
-b1000 <
-b1000 L
-b1000 P
-1"
-0&
-0#
+b1000 M
+b1000 ^
+b1000 g
+1#
+0'
+0$
 #100
-0+
+0/
 #105
-b100 7
-1+
+b100 D
+1/
 #106
-b10100 ?
-b10100 O
-1%
-1!
-0"
+b10100 P
+b10100 a
+1&
+1"
+0#
 #110
-0+
+0/
 #115
-b101 7
-1+
+b101 D
+1/
 #116
-b1010 ?
-b1010 O
-1*
-0%
-0!
+b1010 P
+b1010 a
+1.
+0&
+0"
 #120
-0+
+0/
 #125
-b0 7
-1+
+b0 D
+1/
 #126
-0*
+0.
 #130
-0+
+0/
 #135
-b1 7
-1+
+b1 D
+1/
 #136
-1$
+1%
 #140
-0+
+0/
 #145
-b10 7
-1+
+b10 D
+1/
 #146
-1(
-0)
-b100000000001000 <
-b100000000001000 L
-b100000000001000 P
-1&
-1#
-0$
+b10000000001000 M
+b10000000001000 ^
+b10000000001000 g
+1'
+1$
+0%
 #150
-0+
+0/
 #155
-b11 7
-1+
+b11 D
+1/
 #156
-0(
-1)
-b1000 <
-b1000 L
-b1000 P
-1"
-0&
-0#
+b1000 M
+b1000 ^
+b1000 g
+1#
+0'
+0$
 #160
-0+
+0/
 #165
-b100 7
-1+
+b100 D
+1/
 #166
-b10100 ?
-b10100 O
-1%
-1!
-0"
+b10100 P
+b10100 a
+1&
+1"
+0#
 #170
-0+
+0/
 #175
-b101 7
-1+
+b101 D
+1/
 #176
-b1010 ?
-b1010 O
-1*
-0%
-0!
+b1010 P
+b1010 a
+1.
+0&
+0"
 #180
-0+
+0/
 #185
-b0 7
-1+
+b0 D
+1/
 #186
-0*
+0.
 #190
-0+
+0/
 #195
-b1 7
-1+
+b1 D
+1/
 #196
-1$
+1%
 #200
-0+
+0/
 #205
-b10 7
-1+
+b10 D
+1/
 #206
-1(
-0)
-b100000000001000 <
-b100000000001000 L
-b100000000001000 P
-1&
-1#
-0$
+b10000000001000 M
+b10000000001000 ^
+b10000000001000 g
+1'
+1$
+0%
 #210
-0+
+0/
 #215
-b11 7
-1+
+b11 D
+1/
 #216
-0(
-1)
-b1000 <
-b1000 L
-b1000 P
-1"
-0&
-0#
+b1000 M
+b1000 ^
+b1000 g
+1#
+0'
+0$
 #220
-0+
+0/
 #225
-b100 7
-1+
+b100 D
+1/
 #226
-b10100 ?
-b10100 O
-1%
-1!
-0"
+b10100 P
+b10100 a
+1&
+1"
+0#
 #230
-0+
+0/
 #235
-b101 7
-1+
+b101 D
+1/
 #236
-b1010 ?
-b1010 O
-1*
-0%
-0!
+b1010 P
+b1010 a
+1.
+0&
+0"
 #240
-0+
+0/
 #245
-b0 7
-1+
+b0 D
+1/
 #246
-0*
+0.
 #250
-0+
+0/
 #255
-b1 7
-1+
+b1 D
+1/
 #256
-1$
+1%
 #260
-0+
+0/
 #265
-b10 7
-1+
+b10 D
+1/
 #266
-1(
-0)
-b100000000001000 <
-b100000000001000 L
-b100000000001000 P
-1&
-1#
-0$
+b10000000001000 M
+b10000000001000 ^
+b10000000001000 g
+1'
+1$
+0%
 #270
-0+
+0/
 #275
-b11 7
-1+
+b11 D
+1/
 #276
-0(
-1)
-b1000 <
-b1000 L
-b1000 P
-1"
-0&
-0#
+b1000 M
+b1000 ^
+b1000 g
+1#
+0'
+0$
 #280
-0+
+0/
 #285
-b100 7
-1+
+b100 D
+1/
 #286
-b10100 ?
-b10100 O
-1%
-1!
-0"
+b10100 P
+b10100 a
+1&
+1"
+0#
 #290
-0+
+0/
 #295
-b101 7
-1+
+b101 D
+1/
 #296
-b1010 ?
-b1010 O
-1*
-0%
-0!
+b1010 P
+b1010 a
+1.
+0&
+0"
 #300
-0+
+0/
 #305
-b0 7
-1+
+b0 D
+1/
 #306
-0*
+0.
 #310
-0+
+0/
 #315
-b1 7
-1+
+b1 D
+1/
 #316
-1$
+1%
 #320
-0+
+0/
 #325
-b10 7
-1+
+b10 D
+1/
 #326
-1(
-0)
-b100000000001000 <
-b100000000001000 L
-b100000000001000 P
-1&
-1#
-0$
+b10000000001000 M
+b10000000001000 ^
+b10000000001000 g
+1'
+1$
+0%
 #330
-0+
+0/
 #335
-b11 7
-1+
+b11 D
+1/
 #336
-0(
-1)
-b1000 <
-b1000 L
-b1000 P
-1"
-0&
-0#
+b1000 M
+b1000 ^
+b1000 g
+1#
+0'
+0$
 #340
-0+
+0/
 #345
-b100 7
-1+
+b100 D
+1/
 #346
-b10100 ?
-b10100 O
-1%
-1!
-0"
+b10100 P
+b10100 a
+1&
+1"
+0#
 #350
-0+
+0/
 #355
-b101 7
-1+
+b101 D
+1/
 #356
-b1010 ?
-b1010 O
-1*
-0%
-0!
+b1010 P
+b1010 a
+1.
+0&
+0"
 #360
-0+
+0/
 #365
-b0 7
-1+
+b0 D
+1/
 #366
-0*
+0.
 #370
-0+
+0/
 #375
-b1 7
-1+
+b1 D
+1/
 #376
-1$
+1%
 #380
-0+
+0/
 #385
-b10 7
-1+
+b10 D
+1/
 #386
-1(
-0)
-b100000000001000 <
-b100000000001000 L
-b100000000001000 P
-1&
-1#
-0$
+b10000000001000 M
+b10000000001000 ^
+b10000000001000 g
+1'
+1$
+0%
 #390
-0+
+0/
 #395
-b11 7
-1+
+b11 D
+1/
 #396
-0(
-1)
-b1000 <
-b1000 L
-b1000 P
-1"
-0&
-0#
-#400
-0+
-#405
-b100 7
-1+
-#406
-b10100 ?
-b10100 O
-1%
-1!
-0"
-#410
-0+
-#415
-b101 7
-1+
-#416
-b1010 ?
-b1010 O
-1*
-0%
-0!
-#420
-0+
-#425
-b0 7
-1+
-#426
-0*
-#430
-0+
-#435
-b1 7
-1+
-#436
-1$
-#440
-0+
-#445
-b10 7
-1+
-#446
-1(
-0)
-b100000000001000 <
-b100000000001000 L
-b100000000001000 P
-1&
+b1000 M
+b1000 ^
+b1000 g
 1#
+0'
 0$
-#450
-0+
-#455
-b11 7
-1+
-#456
-0(
-1)
-b1000 <
-b1000 L
-b1000 P
+#400
+0/
+#405
+b100 D
+1/
+#406
+b10100 P
+b10100 a
+1&
 1"
-0&
 0#
-#460
-0+
-#465
-b100 7
-1+
-#466
-b10100 ?
-b10100 O
-1%
-1!
+#410
+0/
+#415
+b101 D
+1/
+#416
+b1010 P
+b1010 a
+1.
+0&
 0"
-#470
-0+
-#475
-b101 7
-1+
-#476
-b1010 ?
-b1010 O
-1*
-0%
-0!
-#480
-0+
-#485
-b0 7
-1+
-#486
-0*
-#490
-0+
-#495
-b1 7
-1+
-#496
+#420
+0/
+#425
+b0 D
+1/
+#426
+0.
+#430
+0/
+#435
+b1 D
+1/
+#436
+1%
+#440
+0/
+#445
+b10 D
+1/
+#446
+b10000000001000 M
+b10000000001000 ^
+b10000000001000 g
+1'
 1$
+0%
+#450
+0/
+#455
+b11 D
+1/
+#456
+b1000 M
+b1000 ^
+b1000 g
+1#
+0'
+0$
+#460
+0/
+#465
+b100 D
+1/
+#466
+b10100 P
+b10100 a
+1&
+1"
+0#
+#470
+0/
+#475
+b101 D
+1/
+#476
+b1010 P
+b1010 a
+1.
+0&
+0"
+#480
+0/
+#485
+b0 D
+1/
+#486
+0.
+#490
+0/
+#495
+b1 D
+1/
+#496
+1%
 #500
-0+
+0/
 #503

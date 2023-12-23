@@ -2,7 +2,10 @@ Code for the simulation in "icarus" verilog software. <br>
   iverilog -o decoder_test_tb.vvp decoder_test_tb.v <br>
   vvp decoder_test_tb.vvp
 
-open the gtkwave by typing gtkwave on the vscode console and select the vcd file which created in previous step
+open the gtkwave by typing gtkwave on the vscode console and select the vcd file which created in previous step <br>
+
+![decoder_sketch](https://github.com/tadjc/DSD_assignment/assets/153454616/062b4428-4b20-41b3-969d-ad90ec20b1f1)
+
 
 
 

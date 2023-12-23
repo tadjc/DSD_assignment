@@ -1,24 +1,5 @@
-module MUXR(
-
-hrdata_1,
-hrdata_2,
-hrdata_3,
-
-hreadyout_1,
-hreadyout_2,
-hreadyout_3,
-
-hresp_1,
-hresp_2,
-hresp_3,
-
-sel,
-
-hrdata,
-hreadyout,
-hresponse
-
-);
+module MUXR( hrdata_1, hrdata_2,hrdata_3,hreadyout_1,hreadyout_2,hreadyout_3,hresp_1,hresp_2,hresp_3,sel,
+                    hrdata,hreadyout,hresponse);
 
 
 input [31:0] hrdata_1;

@@ -14,16 +14,26 @@ input hresp_1;
 input hresp_2;
 input hresp_3;
 
-input [1:0] sel
+input [2:0] sel;
 
 output reg [31:0] hrdata;
-output reg hrdata;
-output reg hresponse;
+output reg hreadyout;
+output reg [1:0] hresponse;
 
 
 always @(*)
     case (sel)
-        2'b00:
+
+        3'b000:
+            begin
+
+                hrdata = 32'bz;
+                hreadyout = hreadyout;
+                hresponse = 2'bz;
+                  
+            end
+
+        3'b001:
             begin
 
                 hrdata = hrdata_1;
@@ -33,7 +43,7 @@ always @(*)
             end
 
 
-        2'b01:
+        3'b010:
             begin
 
                 hrdata = hrdata_2;
@@ -42,7 +52,7 @@ always @(*)
 
             end
 
-        2'b10:
+        3'b011:
             begin
 
                 hrdata = hrdata_3;
@@ -54,9 +64,9 @@ always @(*)
        default:
             begin
 
-                hrdata = hrdata_2;
-                hreadyout = hreadyout_2;
-                hresponse = hresp_2;
+                hrdata = 32'bz;
+                hreadyout = hreadyout;
+                hresponse = 2'bz;
 
             end
 

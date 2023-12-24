@@ -1,12 +1,24 @@
 module data_path(slave_0,slave_1,slave_2,address,Aout,sel1,sel2,mux1,rst,data_in1,data_in2,clk,
-                                sel3,sel4,mux2,data_in3,data_in4);
+                                sel3,sel4,mux2,data_in3,data_in4,
+                                rdin1,rdin2,rdin3,resp1,resp2,resp3,rdy1,rdy2,rdy3,dout,rdyout,respout,
+                                dataout, Dout);
 
-    input sel1,sel2,mux1,sel3,sel4,mux2,clk,rst,Aout;
+    input sel1,sel2,mux1,sel3,sel4,mux2,clk,rst,Aout,Dout;
     input [15:0] data_in1, data_in2;
     input [31:0] data_in3,data_in4;
 
+    //read data mux
+    input [31:0] rdin1,rdin2,rdin3;
+    input [1:0] resp1,resp2,resp3;
+    input rdy1,rdy2,rdy3;
+
+    output [31:0] dout;
+    output rdyout;
+    output [1:0] respout;
+
 //.......................
     output [15:0] address;
+    output [31:0] dataout;
 //.........................
 
 
@@ -16,6 +28,14 @@ module data_path(slave_0,slave_1,slave_2,address,Aout,sel1,sel2,mux1,rst,data_in
     wire [31:0] p,q,r; // for data values
 
     output slave_0,slave_1,slave_2; //buffer outputs
+
+//making control inputs for the data out register
+
+    wire [2:0] seld;
+    assign seld[0] = hsel_0;
+    assign seld[1] = hsel_1;
+    assign seld[2] = hsel_2;
+
 
    
  //address muxes   
@@ -29,7 +49,8 @@ module data_path(slave_0,slave_1,slave_2,address,Aout,sel1,sel2,mux1,rst,data_in
     MUXD datamux (r,p,q,mux2);
 
    
-    PIPO AOUT (address,z,Aout,clk);
+    TRI_BUFF add_buff(address,Aout,z);
+    TRI_BUFF_D data_buff(dataout,Dout,r);
 
     decoder dec1 (hsel_0,hsel_1,hsel_2,z,rst);
 
@@ -39,7 +60,7 @@ module data_path(slave_0,slave_1,slave_2,address,Aout,sel1,sel2,mux1,rst,data_in
 
 // read data mux
 
-    MUXR 
+    MUXR readMUX(dout,rdyout,respout,rdin1,rdin2,rdin3,rdy1,rdy2,rdy3,resp1,resp2,resp3,seld);
 
 
 

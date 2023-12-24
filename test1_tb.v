@@ -12,10 +12,6 @@
 `include "TRI_BUFF_D.v"
 
 
-
-
-
-
 module test1_tb;
 
 reg [15:0] data_in1,data_in2;
@@ -36,6 +32,11 @@ wire [1:0] respout;
 //output data from master to slave
 wire [31:0] dataout;
 
+//for the arbiter part
+
+reg [1:0] response;
+reg split,ready,busreq_1,busreq_2,read_write;
+   // reg ready,grant_1,grant_2;
 
                 
 //data_path dpt1 (hsel_0,hsel_1,hsel_2,address,Aout,sel1,sel2,mux1,rst,data_in1,data_in2,clk);
@@ -47,7 +48,8 @@ data_path dpt(slave_0,slave_1,slave_2,address,Aout,sel1,sel2,mux1,rst,data_in1,d
                                 
                                
 
-control_states cpt1(sel1,sel2,sel3,sel4,mux2,clk,mux1,rst,Aout,Dout);
+control_states cpt1(sel1,sel2,sel3,sel4,mux2,clk,mux1,rst,Aout,Dout,
+                            busreq_1,busreq_2,grant_1,grant_2,split,response,ready,read_write);
 
 initial
     begin
@@ -76,9 +78,45 @@ initial
         resp2 = 2'b11;#1;
         resp1 = 2'b10;#1;
 
-        rdy1 = 1;
-        rdy2 = 0;
-        rdy3 = 1;
+        rdy1 = 1;#1;
+        rdy2 = 0;#1;
+        rdy3 = 1;#1;
+
+        //for arbiter read_write: 1 - write / 0 - read
+
+        //writing to slave1 by the master1 from idle state
+     /*   busreq_1 = 1;#1;
+        busreq_2 = 0;#1;
+        ready = 1;#1;
+        split = 0;#1;
+        response = 2'b00;#1;
+        read_write = 1; */
+
+      //reading from slave1 by the master1 from idle state
+    /*    busreq_1 = 1;#1;
+        busreq_2 = 0;#1;
+        ready = 1;#1;
+        split = 0;#1;
+        response = 2'b00;#1;
+        read_write = 0; */
+
+    //reading from slave1 by the master 2 from idle state
+     /*   busreq_1 = 0;#1;
+        busreq_2 = 1;#1;
+        ready = 1;#1;
+        split = 0;#1;
+        response = 2'b00;#1;
+        read_write = 0;*/
+
+    //both masters are requesting the buss address from idle state. Master1 was assigned highest priority
+        busreq_1 = 1;#1;
+        busreq_2 = 1;#1;
+        ready = 1;#1;
+        split = 0;#1;
+        response = 2'b00;#1;
+        read_write = 0;
+
+        
 
        // data_in1 = 16'b0110000000001000; #1;
 

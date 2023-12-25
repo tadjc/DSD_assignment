@@ -1,9 +1,9 @@
 module control_states(sel1,sel2,sel3,sel4,mux2,clk,mux1,rst,Aout,Dout,
-                            busreq_1,busreq_2,grant_1,grant_2,split,response,ready,read_write);
+                            busreq_1,busreq_2,grant_1,grant_2,split,response,ready,read_write,error);
 
 input clk,rst,busreq_1,busreq_2,split,ready,read_write;
 input [1:0] response;
-output reg sel1,sel2,mux1,sel3,sel4,mux2,Aout,Dout,grant_1,grant_2;
+output reg sel1,sel2,mux1,sel3,sel4,mux2,Aout,Dout,grant_1,grant_2,error;
 
 wire [1:0] REQ;
 assign REQ[0] = busreq_1;
@@ -78,7 +78,16 @@ always @(posedge clk)
                     else state <= s0;
                 
 
-            s1: state <= s2; //slave 1 write state
+            s1: if (~rst) begin
+                    case(response)
+                        00: if(ready)
+                                begin
+                                    state <= s0;
+                                end
+
+
+            
+             state <= s2; //slave 1 write state
 
             s2: state <= s3; //slave 1 read state
             s3: state <= s4; //slave 2 write state

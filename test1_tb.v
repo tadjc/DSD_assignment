@@ -49,7 +49,7 @@ data_path dpt(slave_0,slave_1,slave_2,address,Aout,sel1,sel2,mux1,rst,data_in1,d
                                
 
 control_states cpt1(sel1,sel2,sel3,sel4,mux2,clk,mux1,rst,Aout,Dout,
-                            busreq_1,busreq_2,grant_1,grant_2,split,response,ready,read_write);
+                            busreq_1,busreq_2,grant_1,grant_2,split,response,ready,read_write,error);
 
 initial
     begin
@@ -64,8 +64,8 @@ initial
    
         rst = 1'b1; #1;
 
-        data_in1 = 16'b0010000000001000; #1;
-        data_in2 = 16'b0100000000001000; #1;
+        data_in1 = 16'b0010000000001000; #1; //slave one select h2008
+        data_in2 = 16'b0100000000001000; #1; //slave 2 select h4008
 
         data_in3 = 567; #1;
         data_in4 = 434; #1;

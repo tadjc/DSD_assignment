@@ -8,6 +8,6 @@ module PIPO(dout,din,ld,clk);
             if (ld) 
                 dout <= din;
             else
-                dout <= 16'bz;
+                dout <= 16'bz; 
         end
 endmodule

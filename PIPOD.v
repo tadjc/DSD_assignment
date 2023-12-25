@@ -7,7 +7,7 @@ module PIPOD(dout,din,ld,clk);
         begin
             if (ld) 
                 dout <= din;
-            else
-                dout <= 32'bz;
-        end
+       else
+                dout <= 32'bz; 
+        end 
 endmodule

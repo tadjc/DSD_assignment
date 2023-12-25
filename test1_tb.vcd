@@ -1,5 +1,5 @@
 $date
-	Mon Dec 25 07:10:21 2023
+	Mon Dec 25 13:33:12 2023
 $end
 $version
 	Icarus Verilog
@@ -147,8 +147,9 @@ $var reg 32 s dout [31:0] $end
 $upscope $end
 $scope module add_buff $end
 $var wire 1 3 en $end
-$var wire 16 t out [15:0] $end
-$var wire 16 u in [15:0] $end
+$var wire 1 G rst $end
+$var wire 16 t in [15:0] $end
+$var reg 16 u out [15:0] $end
 $upscope $end
 $scope module addressmux $end
 $var wire 16 v in0 [15:0] $end
@@ -158,8 +159,9 @@ $var wire 16 x out [15:0] $end
 $upscope $end
 $scope module data_buff $end
 $var wire 1 2 en $end
-$var wire 32 y out [31:0] $end
-$var wire 32 z in [31:0] $end
+$var wire 1 G rst $end
+$var wire 32 y in [31:0] $end
+$var reg 32 z out [31:0] $end
 $upscope $end
 $scope module datamux $end
 $var wire 32 { in0 [31:0] $end
@@ -217,9 +219,9 @@ b1 K
 $end
 #0
 $dumpvars
-bz )"
-bz ("
-b0 '"
+bx )"
+bx ("
+bx '"
 bx &"
 bx %"
 bx $"
@@ -240,22 +242,22 @@ bx t
 bx s
 bx r
 bx q
-bx p
+b1000110111 p
 bx o
 bx n
 bx m
-bx l
+b10000000001000 l
 bx k
 bx j
-bz i
-0h
-0g
-0f
+bx i
+xh
+xg
+xf
 bx e
 bx d
 bx c
-bz b
-b0 a
+bx b
+bx a
 bx `
 bx _
 bx ^
@@ -266,14 +268,14 @@ bx Z
 bx Y
 bx X
 bx W
-bx V
+b1000110111 V
 bx U
-bx T
+b10000000001000 T
 bx S
 bx J
 bx I
 xH
-1G
+xG
 bx F
 bx E
 bx D
@@ -287,9 +289,9 @@ bx =
 bx <
 bx ;
 bx :
-bx 9
+b1000110111 9
 bx 8
-bx 7
+b10000000001000 7
 06
 x5
 x4
@@ -297,46 +299,61 @@ x3
 x2
 bx 1
 bx 0
-bz /
+bx /
 x.
 x-
 x,
 x+
 x*
 x)
-bz (
+bx (
 x'
 x&
 x%
 x$
-0#
-0"
-0!
+x#
+x"
+x!
 $end
-#1
-b10000000001000 7
-b10000000001000 T
-b10000000001000 l
-#2
-b100000000001000 8
-b100000000001000 U
-b100000000001000 n
-#3
-b1000110111 9
-b1000110111 V
-b1000110111 p
-#4
-b110110010 :
-b110110010 W
-b110110010 r
 #5
-bz ^
+bz (
+bz b
+bz )"
+bz /
+bz i
+bz ("
+0!
+0f
+0"
+0g
+0#
+b0 a
+b0 '"
+0h
+bz 1
+bz k
 bz u
+bz 0
+bz j
+bz z
+bz ^
+bz t
 bz x
 bz ~
 bz c
-bz z
+bz y
 bz }
+0.
+0,
+0-
+02
+0*
+0$
+0%
+03
+0+
+0&
+0'
 bz `
 bz m
 bz v
@@ -350,36 +367,16 @@ bz d
 bz s
 bz |
 b0 S
-b0 F
-b0 I
-0A
-0B
-0H
-05
-b0 J
-04
-0G
 16
 #10
 06
 #15
-b0 0
-b0 j
-b0 y
-b0 1
-b0 k
-b0 t
 16
-02
-0*
-0$
-0%
-03
-0+
-0&
-0'
 #20
 06
+b110110010 :
+b110110010 W
+b110110010 r
 #25
 16
 #30
@@ -388,8 +385,38 @@ b0 t
 16
 #40
 06
+b110010 ;
+b110010 X
+b110010 !"
+#41
+b0 <
+b0 Y
+b0 ""
+#42
+b0 =
+b0 Z
+b0 #"
+#43
+b1 C
+b1 [
+b1 $"
+#44
+b11 D
+b11 \
+b11 %"
 #45
+b10 C
+b10 [
+b10 $"
 16
+#46
+1>
+#47
+0?
+#48
+1@
+#49
+0G
 #50
 06
 #55
@@ -398,49 +425,116 @@ b0 t
 06
 #65
 16
+#69
+bx1 J
+14
 #70
+b1 J
+05
 06
+#71
+1B
+#72
+0H
+#73
+b0 F
+b0 I
+#74
+0A
 #75
+13
+1'
+b10 S
+1-
 16
 #80
 06
 #85
+b10 (
+b10 b
+b10 )"
+1)
+b110010 /
+b110010 i
+b110010 ("
+1#
+b1 a
+b1 '"
+1h
+b10000000001000 1
+b10000000001000 k
+b10000000001000 u
+b10000000001000 ^
+b10000000001000 t
+b10000000001000 x
+b10000000001000 ~
+b10000000001000 `
+b10000000001000 m
+b10000000001000 v
+b0 S
 16
 #90
 06
 #95
+b10 S
 16
 #100
 06
 #105
+b0 S
 16
 #110
 06
 #115
+b10 S
 16
 #120
 06
 #125
+b0 S
 16
 #130
 06
 #135
+b10 S
 16
 #140
 06
 #145
+b0 S
 16
 #150
 06
 #155
+b10 S
 16
 #160
 06
 #165
+b0 S
 16
 #170
 06
+#174
+bz (
+bz b
+bz )"
+bz /
+bz i
+bz ("
+b0 1
+b0 k
+b0 u
+0#
+b0 a
+b0 '"
+0h
+b0 0
+b0 j
+b0 z
+1G
 #175
+0-
 16
 #180
 06
@@ -448,10 +542,31 @@ b0 t
 16
 #190
 06
+#194
+b1 F
+b1 I
 #195
 16
 #200
 06
+#204
+b10 (
+b10 b
+b10 )"
+b110010 /
+b110010 i
+b110010 ("
+1#
+b1 a
+b1 '"
+1h
+b10000000001000 1
+b10000000001000 k
+b10000000001000 u
+bz 0
+bz j
+bz z
+0G
 #205
 16
 #210

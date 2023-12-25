@@ -1,7 +1,13 @@
-module TRI_BUFF(out, en, in);
-input en;
+module TRI_BUFF(out, en, in,rst);
+input en,rst;
 input [15:0] in;
-output [15:0] out;
+output reg [15:0] out;
 
-assign out = en ? in : 16'b0;
+always @(*)
+  if(rst)
+    begin
+        out = 16'b0;
+    end
+    else
+    out = in;
 endmodule

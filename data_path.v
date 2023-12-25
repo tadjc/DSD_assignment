@@ -49,8 +49,8 @@ module data_path(slave_0,slave_1,slave_2,address,Aout,sel1,sel2,mux1,rst,data_in
     MUXD datamux (r,p,q,mux2);
 
    
-    TRI_BUFF add_buff(address,Aout,z); // pssing address from the master
-    TRI_BUFF_D data_buff(dataout,Dout,r); //passing data from the master
+    TRI_BUFF add_buff(address,Aout,z,rst); // pssing address from the master
+    TRI_BUFF_D data_buff(dataout,Dout,r,rst); //passing data from the master
 
     decoder dec1 (hsel_0,hsel_1,hsel_2,z,rst);
 

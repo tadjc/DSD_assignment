@@ -70,7 +70,7 @@ initial
         data_in3 = 567; #1;
         data_in4 = 434; #1;
 
-        rdin1 = 50;#1;
+    /*    rdin1 = 50;#1;
         rdin2 = 0;#1;
         rdin3 = 0;#1;
 
@@ -80,12 +80,23 @@ initial
 
         rdy1 = 1;#1;
         rdy2 = 0;#1;
-        rdy3 = 1;#1;
+        rdy3 = 1;#1;*/
 
         //for arbiter read_write: 1 - write / 0 - read
 
         //writing to slave1 by the master1 from idle state
-     /*   busreq_1 = 1;#1;
+
+        rst = 1'b0;
+
+        busreq_1 = 0;
+        busreq_2= 0;
+        split = 0;
+        ready = 0;
+        read_write =0;
+        response = 2'b00;
+
+
+     /* busreq_1 = 1;#1;
         busreq_2 = 0;#1;
         ready = 1;#1;
         split = 0;#1;
@@ -109,20 +120,20 @@ initial
         read_write = 0;*/
 
     //both masters are requesting the buss address from idle state. Master1 was assigned highest priority
-        busreq_1 = 1;#1;
+   /*     busreq_1 = 1;#1;
         busreq_2 = 1;#1;
         ready = 1;#1;
         split = 0;#1;
         response = 2'b00;#1;
         read_write = 0;
-
+*/
         
 
        // data_in1 = 16'b0110000000001000; #1;
 
-        rst = 1'b0; #500;
+       // rst = 1'b0; #500;
 
-        rst = 1'b1;
+       // rst = 1'b1;
 
        // #200;
         //rst = 1'b1;

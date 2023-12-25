@@ -80,21 +80,114 @@ always @(posedge clk)
 
             s1: if (~rst) begin
                     case(response)
-                        00: if(ready)
+                        00: 
+                            if(ready)
                                 begin
                                     state <= s0;
                                 end
+                        01: 
+                            begin
+                                error = 1;
+                                state <= s0;
+                            end
 
+                        10: 
+                            state <= s1;
 
+                        11:
+                            state <= s1;
+                          
+                        default: state <= s0;
+                    endcase
+                end
+                
+                else state <= s0;
             
-             state <= s2; //slave 1 write state
+           // s1: state <= s2; //slave 1 write state
 
-            s2: state <= s3; //slave 1 read state
-            s3: state <= s4; //slave 2 write state
-            s4: state <= s0; //slave 2 read state
-            default: state <= s0;
-        endcase
-    end
+            s2:  //slave 1 read state
+                if (~rst) begin
+                    case(response)
+                        00: 
+                            if(ready)
+                                begin
+                                    state <= s0;
+                                end
+                        01: 
+                            begin
+                                error = 1;
+                                state <= s0;
+                            end
+
+                        10: 
+                            state <= s2;
+
+                        11:
+                            state <= s2;
+                          
+                        default: state <= s0;
+                    endcase
+                end
+                
+                else state <= s0;
+
+
+            s3: //slave 2 write state
+                if (~rst) begin
+                    case(response)
+                        00: 
+                            if(ready)
+                                begin
+                                    state <= s0;
+                                end
+                        01: 
+                            begin
+                                error = 1;
+                                state <= s0;
+                            end
+
+                        10: 
+                            state <= s3;
+
+                        11:
+                            state <= s3;
+                          
+                        default: state <= s0;
+                    endcase
+                end
+                
+                else state <= s0;
+
+
+            s4:  //slave 2 read state
+                        if (~rst) begin
+                            case(response)
+                                00: 
+                                    if(ready)
+                                        begin
+                                            state <= s0;
+                                        end
+                                01: 
+                                    begin
+                                        error = 1;
+                                        state <= s0;
+                                    end
+
+                                10: 
+                                    state <= s4;
+
+                                11:
+                                    state <= s4;
+                                
+                                default: state <= s0;
+                            endcase
+                        end
+                        
+                        else state <= s0;
+
+                    default: state <= s0;
+                endcase
+            end
 
 always @(state)
     begin

@@ -84,10 +84,10 @@ initial
 
         //for arbiter read_write: 1 - write / 0 - read
 
-        //writing to slave1 by the master1 from idle state
+        
+    // Testing the idle condition
 
         rst = 1'b0;
-
         busreq_1 = 0;
         busreq_2= 0;
         split = 0;
@@ -95,7 +95,7 @@ initial
         read_write =0;
         response = 2'b00;
 
-
+    //writing to slave1 by the master1 from idle state
      /* busreq_1 = 1;#1;
         busreq_2 = 0;#1;
         ready = 1;#1;

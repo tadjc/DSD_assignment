@@ -64,10 +64,10 @@ initial
    
      //   rst = 1'b1; #1;
 
-        data_in1 = 16'b0010000000001000;  //slave one select h2008
+      //  data_in1 = 16'b0010000000001000;  //slave one select h2008
       //  data_in2 = 16'b0100000000001000; #1; //slave 2 select h4008
 
-        data_in3 = 567; #20;
+     /*   data_in3 = 567; #20;
         data_in4 = 434; #20;
 
         rdin1 = 50;#1;
@@ -82,25 +82,64 @@ initial
         rdy2 = 0;#1;
         rdy3 = 1;#1;
 
+        */
+
         //for arbiter read_write: 1 - write / 0 - read
+
+      //  #20 rst = 1;
+        rst = 0;
+
+    /*    #100 rst = 1;
+        #100 rst = 0;
 
         
     // Testing the idle condition
-   /*     rst = 1'b0;
-        busreq_1 = 1;
-        read_write =1'bx; #10;
-        busreq_2= 0;
-        read_write =1'bx; #10;
-        read_write =1'b0;
-        split = 1'bx; #10;
-        ready = 1;#10;
-        ready = 0;
+   #10  busreq_1 = 1;
+    #10    read_write =1'b1;
+        //busreq_2= 0;
+    #10    split = 1'b0;
+      #10  ready = 1;
      
+     #10  response = 2'b00;
+       #10 ready = 0;
 
-        response = 2'b00;*/
-/*...............................................................................................................
+    #30 ready = 1;
+        busreq_1 = 0;
+    
+    #30 busreq_1 = 1;
+     #10   response = 2'b01;
+     #30 response = 2'b00;
+     #10 response = 2'b10;
+
+
+     */
+
+  #10  busreq_2 = 1;
+    split = 1'b0;
+    ready = 1;
+    response = 2'b00;
+    read_write =1'b1;
+#10
+    ready = 0;
+#30
+    ready = 1;
+    busreq_2 = 0;
+    busreq_1 = 0;
+
+#20
+  //  busreq_2 = 0;
+    busreq_1 = 1;
+
+#20
+
+    busreq_1 = 0;
+#20
+    busreq_2 = 1;
+    read_write = 1'b0;
+
+//...............................................................................................................
     //writing to slave1 by the master1 from idle state
-        rst = 0;#1;
+      /*  rst = 0;#1;
         busreq_1 = 1;#1; // master 1 requesting the bus
         busreq_2 = 0;#1;
         ready = 1; #1;//slave ready
@@ -123,9 +162,11 @@ initial
         ready = 1; #1;//slave ready
         split = 0;#1;  //no split transfers
         response = 2'b00;#1; //response is in complete state
-        read_write = 1;#200;  // write request
+        read_write = 1;#200;  // write request */
 
-       ............................................................................................ */
+
+
+       //............................................................................................ 
 
        //reading from slave 1 by master1
     /*    rst = 0;#1;
@@ -176,19 +217,34 @@ initial
     */
     //...........................................................................................
 
+     /*   rst = 1;#20;
         rst = 0;#20;
-        busreq_1 = 1;#1; // master 1 requesting the bus
-        busreq_2 = 0;#1;
-        ready = 1; #1;//slave ready
-        split = 0;#1;  //no split transfers
-        response = 2'b00;#1; //response is in complete state
-        read_write = 0;#100;  // write request
-
         rst = 1;#20;
+        rst = 0;#20;
 
-        response = 2'b01; #10;
+        busreq_1 = 1; // master 1 requesting the bus
+        busreq_2 = 0;
+        split = 0;  //no split transfers
+     //   response = 2'b00;#100; //response is in complete state
+        read_write = 0;#1;  // write request
+        ready = 1; #1;//slave ready
+        response = 2'b00; #200;
 
-        rst = 1'b0;
+        ready = 0;
+
+      */
+
+
+
+      //  response = 2'b00;#800;
+       //response = 2'b01;#1; */
+
+
+       // rst = 1;#20;
+
+       // response = 2'b01; #10;
+
+     //   rst = 1'b0;
 
 
 

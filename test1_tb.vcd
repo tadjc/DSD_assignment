@@ -1,5 +1,5 @@
 $date
-	Mon Dec 25 13:33:12 2023
+	Sat Dec 30 13:44:18 2023
 $end
 $version
 	Icarus Verilog
@@ -57,15 +57,22 @@ $var wire 1 B ready $end
 $var wire 2 I response [1:0] $end
 $var wire 1 G rst $end
 $var wire 1 H split $end
-$var wire 2 J REQ [1:0] $end
+$var parameter 2 J ERROR $end
 $var parameter 2 K M1 $end
-$var parameter 2 L M2 $end
-$var parameter 2 M MB $end
-$var parameter 3 N s0 $end
-$var parameter 3 O s1 $end
-$var parameter 3 P s2 $end
-$var parameter 3 Q s3 $end
-$var parameter 3 R s4 $end
+$var parameter 2 L M11 $end
+$var parameter 2 M M2 $end
+$var parameter 2 N M22 $end
+$var parameter 2 O MB $end
+$var parameter 2 P MX1 $end
+$var parameter 2 Q MX2 $end
+$var parameter 2 R OKAY $end
+$var parameter 2 S RETRY $end
+$var parameter 2 T SPLIT $end
+$var parameter 3 U s0 $end
+$var parameter 3 V s1 $end
+$var parameter 3 W s2 $end
+$var parameter 3 X s3 $end
+$var parameter 3 Y s4 $end
 $var reg 1 3 Aout $end
 $var reg 1 2 Dout $end
 $var reg 1 . error $end
@@ -77,148 +84,163 @@ $var reg 1 ' sel1 $end
 $var reg 1 & sel2 $end
 $var reg 1 % sel3 $end
 $var reg 1 $ sel4 $end
-$var reg 3 S state [2:0] $end
+$var reg 3 Z state [2:0] $end
 $upscope $end
 $scope module dpt $end
 $var wire 1 3 Aout $end
 $var wire 1 2 Dout $end
 $var wire 1 6 clk $end
-$var wire 16 T data_in1 [15:0] $end
-$var wire 16 U data_in2 [15:0] $end
-$var wire 32 V data_in3 [31:0] $end
-$var wire 32 W data_in4 [31:0] $end
+$var wire 16 [ data_in1 [15:0] $end
+$var wire 16 \ data_in2 [15:0] $end
+$var wire 32 ] data_in3 [31:0] $end
+$var wire 32 ^ data_in4 [31:0] $end
 $var wire 1 + mux1 $end
 $var wire 1 * mux2 $end
-$var wire 32 X rdin1 [31:0] $end
-$var wire 32 Y rdin2 [31:0] $end
-$var wire 32 Z rdin3 [31:0] $end
+$var wire 32 _ rdin1 [31:0] $end
+$var wire 32 ` rdin2 [31:0] $end
+$var wire 32 a rdin3 [31:0] $end
 $var wire 1 > rdy1 $end
 $var wire 1 ? rdy2 $end
 $var wire 1 @ rdy3 $end
-$var wire 2 [ resp1 [1:0] $end
-$var wire 2 \ resp2 [1:0] $end
-$var wire 2 ] resp3 [1:0] $end
+$var wire 2 b resp1 [1:0] $end
+$var wire 2 c resp2 [1:0] $end
+$var wire 2 d resp3 [1:0] $end
 $var wire 1 G rst $end
 $var wire 1 ' sel1 $end
 $var wire 1 & sel2 $end
 $var wire 1 % sel3 $end
 $var wire 1 $ sel4 $end
-$var wire 16 ^ z [15:0] $end
-$var wire 16 _ y [15:0] $end
-$var wire 16 ` x [15:0] $end
+$var wire 16 e z [15:0] $end
+$var wire 16 f y [15:0] $end
+$var wire 16 g x [15:0] $end
 $var wire 1 ! slave_2 $end
 $var wire 1 " slave_1 $end
 $var wire 1 # slave_0 $end
-$var wire 3 a seld [2:0] $end
-$var wire 2 b respout [1:0] $end
+$var wire 3 h seld [2:0] $end
+$var wire 2 i respout [1:0] $end
 $var wire 1 ) rdyout $end
-$var wire 32 c r [31:0] $end
-$var wire 32 d q [31:0] $end
-$var wire 32 e p [31:0] $end
-$var wire 1 f hsel_2 $end
-$var wire 1 g hsel_1 $end
-$var wire 1 h hsel_0 $end
-$var wire 32 i dout [31:0] $end
-$var wire 32 j dataout [31:0] $end
-$var wire 16 k address [15:0] $end
+$var wire 32 j r [31:0] $end
+$var wire 32 k q [31:0] $end
+$var wire 32 l p [31:0] $end
+$var wire 1 m hsel_2 $end
+$var wire 1 n hsel_1 $end
+$var wire 1 o hsel_0 $end
+$var wire 32 p dout [31:0] $end
+$var wire 32 q dataout [31:0] $end
+$var wire 16 r address [15:0] $end
 $scope module HADDR1 $end
 $var wire 1 6 clk $end
-$var wire 16 l din [15:0] $end
+$var wire 16 s din [15:0] $end
 $var wire 1 ' ld $end
-$var reg 16 m dout [15:0] $end
+$var reg 16 t dout [15:0] $end
 $upscope $end
 $scope module HADDR2 $end
 $var wire 1 6 clk $end
-$var wire 16 n din [15:0] $end
+$var wire 16 u din [15:0] $end
 $var wire 1 & ld $end
-$var reg 16 o dout [15:0] $end
+$var reg 16 v dout [15:0] $end
 $upscope $end
 $scope module HWDATA1 $end
 $var wire 1 6 clk $end
-$var wire 32 p din [31:0] $end
+$var wire 32 w din [31:0] $end
 $var wire 1 % ld $end
-$var reg 32 q dout [31:0] $end
+$var reg 32 x dout [31:0] $end
 $upscope $end
 $scope module HWDATA2 $end
 $var wire 1 6 clk $end
-$var wire 32 r din [31:0] $end
+$var wire 32 y din [31:0] $end
 $var wire 1 $ ld $end
-$var reg 32 s dout [31:0] $end
+$var reg 32 z dout [31:0] $end
 $upscope $end
 $scope module add_buff $end
 $var wire 1 3 en $end
 $var wire 1 G rst $end
-$var wire 16 t in [15:0] $end
-$var reg 16 u out [15:0] $end
+$var wire 16 { in [15:0] $end
+$var reg 16 | out [15:0] $end
 $upscope $end
 $scope module addressmux $end
-$var wire 16 v in0 [15:0] $end
-$var wire 16 w in1 [15:0] $end
+$var wire 16 } in0 [15:0] $end
+$var wire 16 ~ in1 [15:0] $end
 $var wire 1 + sel $end
-$var wire 16 x out [15:0] $end
+$var wire 16 !" out [15:0] $end
 $upscope $end
 $scope module data_buff $end
 $var wire 1 2 en $end
 $var wire 1 G rst $end
-$var wire 32 y in [31:0] $end
-$var reg 32 z out [31:0] $end
+$var wire 32 "" in [31:0] $end
+$var reg 32 #" out [31:0] $end
 $upscope $end
 $scope module datamux $end
-$var wire 32 { in0 [31:0] $end
-$var wire 32 | in1 [31:0] $end
+$var wire 32 $" in0 [31:0] $end
+$var wire 32 %" in1 [31:0] $end
 $var wire 1 * sel $end
-$var wire 32 } out [31:0] $end
+$var wire 32 &" out [31:0] $end
 $upscope $end
 $scope module dec1 $end
-$var wire 16 ~ haddr [15:0] $end
+$var wire 16 '" haddr [15:0] $end
 $var wire 1 G rst $end
-$var reg 1 h hsel_0 $end
-$var reg 1 g hsel_1 $end
-$var reg 1 f hsel_2 $end
+$var reg 1 o hsel_0 $end
+$var reg 1 n hsel_1 $end
+$var reg 1 m hsel_2 $end
 $upscope $end
 $scope module out1 $end
-$var wire 1 h in $end
+$var wire 1 o in $end
 $var wire 1 # out $end
 $upscope $end
 $scope module out2 $end
-$var wire 1 g in $end
+$var wire 1 n in $end
 $var wire 1 " out $end
 $upscope $end
 $scope module out3 $end
-$var wire 1 f in $end
+$var wire 1 m in $end
 $var wire 1 ! out $end
 $upscope $end
 $scope module readMUX $end
-$var wire 32 !" hrdata_1 [31:0] $end
-$var wire 32 "" hrdata_2 [31:0] $end
-$var wire 32 #" hrdata_3 [31:0] $end
+$var wire 32 (" hrdata_1 [31:0] $end
+$var wire 32 )" hrdata_2 [31:0] $end
+$var wire 32 *" hrdata_3 [31:0] $end
 $var wire 1 > hreadyout_1 $end
 $var wire 1 ? hreadyout_2 $end
 $var wire 1 @ hreadyout_3 $end
-$var wire 2 $" hresp_1 [1:0] $end
-$var wire 2 %" hresp_2 [1:0] $end
-$var wire 2 &" hresp_3 [1:0] $end
-$var wire 3 '" sel [2:0] $end
-$var reg 32 (" hrdata [31:0] $end
+$var wire 2 +" hresp_1 [1:0] $end
+$var wire 2 ," hresp_2 [1:0] $end
+$var wire 2 -" hresp_3 [1:0] $end
+$var wire 3 ." sel [2:0] $end
+$var reg 32 /" hrdata [31:0] $end
 $var reg 1 ) hreadyout $end
-$var reg 2 )" hresponse [1:0] $end
+$var reg 2 0" hresponse [1:0] $end
 $upscope $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 $comment Show the parameter values. $end
 $dumpall
-b100 R
-b11 Q
-b10 P
-b1 O
-b0 N
-b11 M
-b10 L
-b1 K
+b100 Y
+b11 X
+b10 W
+b1 V
+b0 U
+b11 T
+b10 S
+b0 R
+bx0 Q
+b0x P
+b11 O
+b10 N
+b1x M
+b1 L
+bx1 K
+b1 J
 $end
 #0
 $dumpvars
+bz 0"
+bz /"
+b0 ."
+bx -"
+bx ,"
+bx +"
+bx *"
 bx )"
 bx ("
 bx '"
@@ -242,17 +264,17 @@ bx t
 bx s
 bx r
 bx q
-b1000110111 p
-bx o
-bx n
-bx m
-b10000000001000 l
+bz p
+0o
+0n
+0m
+bx l
 bx k
 bx j
-bx i
-xh
-xg
-xf
+bz i
+b0 h
+bx g
+bx f
 bx e
 bx d
 bx c
@@ -265,17 +287,9 @@ bx ]
 bx \
 bx [
 bx Z
-bx Y
-bx X
-bx W
-b1000110111 V
-bx U
-b10000000001000 T
-bx S
-bx J
 bx I
 xH
-xG
+0G
 bx F
 bx E
 bx D
@@ -289,9 +303,9 @@ bx =
 bx <
 bx ;
 bx :
-b1000110111 9
+bx 9
 bx 8
-b10000000001000 7
+bx 7
 06
 x5
 x4
@@ -299,51 +313,36 @@ x3
 x2
 bx 1
 bx 0
-bx /
+bz /
 x.
 x-
 x,
 x+
 x*
 x)
-bx (
+bz (
 x'
 x&
 x%
 x$
-x#
-x"
-x!
+0#
+0"
+0!
 $end
 #5
-bz (
-bz b
-bz )"
-bz /
-bz i
-bz ("
-0!
-0f
-0"
-0g
-0#
-b0 a
+b0 1
+b0 r
+b0 |
+b0 0
+b0 q
+b0 #"
+b0 e
+b0 {
+b0 !"
 b0 '"
-0h
-bz 1
-bz k
-bz u
-bz 0
-bz j
-bz z
-bz ^
-bz t
-bz x
-bz ~
-bz c
-bz y
-bz }
-0.
+b0 j
+b0 ""
+b0 &"
 0,
 0-
 02
@@ -354,30 +353,50 @@ bz }
 0+
 0&
 0'
-bz `
-bz m
-bz v
-bz _
-bz o
-bz w
-bz e
-bz q
-bz {
-bz d
-bz s
-bz |
-b0 S
+b0 g
+b0 t
+b0 }
+b0 f
+b0 v
+b0 ~
+b0 l
+b0 x
+b0 $"
+b0 k
+b0 z
+b0 %"
+b0 Z
 16
 #10
 06
+1A
+b0 F
+b0 I
+1B
+0H
+15
 #15
+12
+1*
+1&
+1+
+b11 Z
+1,
 16
 #20
 06
-b110110010 :
-b110110010 W
-b110110010 r
+0B
 #25
+bx 1
+bx r
+bx |
+bx e
+bx {
+bx !"
+bx '"
+bx f
+bx v
+bx ~
 16
 #30
 06
@@ -385,505 +404,1081 @@ b110110010 r
 16
 #40
 06
-b110010 ;
-b110010 X
-b110010 !"
-#41
-b0 <
-b0 Y
-b0 ""
-#42
-b0 =
-b0 Z
-b0 #"
-#43
-b1 C
-b1 [
-b1 $"
-#44
-b11 D
-b11 \
-b11 %"
 #45
-b10 C
-b10 [
-b10 $"
 16
-#46
-1>
-#47
-0?
-#48
-1@
-#49
-0G
 #50
 06
+04
+05
+1B
 #55
+b0 1
+b0 r
+b0 |
+b0 e
+b0 {
+b0 !"
+b0 '"
+0,
+02
+0*
+0+
+0&
+b0 Z
 16
 #60
 06
 #65
+b0 f
+b0 v
+b0 ~
 16
-#69
-bx1 J
-14
 #70
-b1 J
-05
 06
-#71
-1B
-#72
-0H
-#73
-b0 F
-b0 I
-#74
-0A
+14
 #75
+12
+1%
 13
 1'
-b10 S
+b1 Z
+0.
 1-
 16
 #80
 06
 #85
-b10 (
-b10 b
-b10 )"
-1)
-b110010 /
-b110010 i
-b110010 ("
-1#
-b1 a
-b1 '"
-1h
-b10000000001000 1
-b10000000001000 k
-b10000000001000 u
-b10000000001000 ^
-b10000000001000 t
-b10000000001000 x
-b10000000001000 ~
-b10000000001000 `
-b10000000001000 m
-b10000000001000 v
-b0 S
+bx 1
+bx r
+bx |
+bx 0
+bx q
+bx #"
+bx e
+bx {
+bx !"
+bx '"
+bx j
+bx ""
+bx &"
+0-
+02
+0%
+03
+0'
+bx g
+bx t
+bx }
+bx l
+bx x
+bx $"
+b0 Z
 16
 #90
 06
+04
 #95
-b10 S
+b0 0
+b0 q
+b0 #"
+b0 1
+b0 r
+b0 |
+b0 j
+b0 ""
+b0 &"
+b0 e
+b0 {
+b0 !"
+b0 '"
+b0 l
+b0 x
+b0 $"
+b0 g
+b0 t
+b0 }
 16
 #100
 06
 #105
-b0 S
 16
 #110
 06
+0A
+15
 #115
-b10 S
+1+
+1&
+b100 Z
+1,
 16
 #120
 06
 #125
-b0 S
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #130
 06
 #135
-b10 S
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #140
 06
 #145
-b0 S
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #150
 06
 #155
-b10 S
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #160
 06
 #165
-b0 S
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #170
 06
-#174
-bz (
-bz b
-bz )"
-bz /
-bz i
-bz ("
-b0 1
-b0 k
-b0 u
-0#
-b0 a
-b0 '"
-0h
-b0 0
-b0 j
-b0 z
-1G
 #175
-0-
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #180
 06
 #185
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #190
 06
-#194
-b1 F
-b1 I
 #195
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #200
 06
-#204
-b10 (
-b10 b
-b10 )"
-b110010 /
-b110010 i
-b110010 ("
-1#
-b1 a
-b1 '"
-1h
-b10000000001000 1
-b10000000001000 k
-b10000000001000 u
-bz 0
-bz j
-bz z
-0G
 #205
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #210
 06
 #215
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #220
 06
 #225
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #230
 06
 #235
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #240
 06
 #245
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #250
 06
 #255
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #260
 06
 #265
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #270
 06
 #275
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #280
 06
 #285
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #290
 06
 #295
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #300
 06
 #305
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #310
 06
 #315
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #320
 06
 #325
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #330
 06
 #335
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #340
 06
 #345
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #350
 06
 #355
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #360
 06
 #365
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #370
 06
 #375
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #380
 06
 #385
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #390
 06
 #395
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #400
 06
 #405
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #410
 06
 #415
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #420
 06
 #425
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #430
 06
 #435
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #440
 06
 #445
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #450
 06
 #455
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #460
 06
 #465
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #470
 06
 #475
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #480
 06
 #485
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #490
 06
 #495
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #500
 06
 #505
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #510
 06
 #515
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #520
 06
 #525
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #530
 06
 #535
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #540
 06
 #545
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #550
 06
 #555
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #560
 06
 #565
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #570
 06
 #575
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #580
 06
 #585
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #590
 06
 #595
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #600
 06
 #605
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #610
 06
 #615
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #620
 06
 #625
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #630
 06
 #635
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #640
 06
 #645
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #650
 06
 #655
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #660
 06
 #665
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #670
 06
 #675
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #680
 06
 #685
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #690
 06
 #695
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #700
 06
 #705
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #710
 06
 #715
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #720
 06
 #725
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #730
 06
 #735
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #740
 06
 #745
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #750
 06
 #755
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #760
 06
 #765
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #770
 06
 #775
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #780
 06
 #785
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #790
 06
 #795
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #800
 06
 #805
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #810
 06
 #815
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #820
 06
 #825
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #830
 06
 #835
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #840
 06
 #845
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #850
 06
 #855
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #860
 06
 #865
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #870
 06
 #875
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #880
 06
 #885
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #890
 06
 #895
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #900
 06
 #905
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #910
 06
 #915
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #920
 06
 #925
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #930
 06
 #935
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #940
 06
 #945
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #950
 06
 #955
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #960
 06
 #965
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #970
 06
 #975
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #980
 06
 #985
+0,
+0+
+0&
+bx f
+bx v
+bx ~
+b0 Z
 16
 #990
 06
 #995
+1+
+1&
+b100 Z
+1,
+b0 f
+b0 v
+b0 ~
 16
 #1000
 06

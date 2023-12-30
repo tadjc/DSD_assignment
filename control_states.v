@@ -6,16 +6,6 @@ input [1:0] response;
 output reg sel1,sel2,mux1,sel3,sel4,mux2,Aout,Dout,grant_1,grant_2,error;
 
 
-
-//reg [1:0] REQ;
-//assign REQ[0] = busreq_1;
-//assign REQ[1] = busreq_2;
-//assign REQ = ;
-
-/*assign REQ[0] = busreq_1;
-assign REQ[1] = busreq_2; */
-
-
 parameter M1 = 2'bx1, M2 = 2'b1x, MB = 2'b11, MX1 = 2'b0x, MX2 = 2'bx0, M11 = 2'b01, M22 = 2'b10 ;
 parameter OKAY = 2'b00, ERROR = 2'b01, RETRY = 2'b10, SPLIT = 2'b11;
 

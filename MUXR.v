@@ -27,9 +27,9 @@ always @(*)
         3'b000:
             begin
 
-                hrdata = 32'bz;
-                hreadyout = hreadyout;
-                hresponse = 2'bz;
+                hrdata = 32'b0;
+                hreadyout = 0;
+                hresponse = 2'b0;
                   
             end
 

@@ -64,8 +64,16 @@ initial
    
      //   rst = 1'b1; #1;
 
-      //  data_in1 = 16'b0010000000001000;  //slave one select h2008
-      //  data_in2 = 16'b0100000000001000; #1; //slave 2 select h4008
+        data_in1 = 16'b0010000000001000;  //slave one select h2008
+        data_in2 = 16'b0100000000001000; //slave 2 select h4008
+
+        rdin1 = 50;
+        rdin2 = 0;
+        resp1 = 2'b01;
+        resp2 = 2'b11;
+
+        rdy1 = 1;
+        rdy2 = 0;
 
      /*   data_in3 = 567; #20;
         data_in4 = 434; #20;
@@ -129,7 +137,7 @@ initial
 #20
   //  busreq_2 = 0;
     busreq_1 = 1;
-
+    read_write =1'b0;
 #20
 
     busreq_1 = 0;

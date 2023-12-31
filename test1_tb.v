@@ -10,12 +10,22 @@
 `include "MUXR.v"
 `include "TRI_BUFF.v"
 `include "TRI_BUFF_D.v"
+`include "regbank_32_in.v"
+`include "regbank_32_out.v"
+`include "regbank_A_16.v"
+`include "data_path_master.v"
+`include "control_path_master.v"
+
 
 
 module test1_tb;
 
-reg [15:0] data_in1,data_in2;
-reg [31:0] data_in3,data_in4;
+//reg [15:0] data_in1,data_in2;
+
+//reg [15:0] Abus;
+
+
+//reg [31:0] data_in3,data_in4;
 
 reg clk,rst;
 wire [15:0] address; //for address out
@@ -26,30 +36,46 @@ reg [1:0] resp1,resp2,resp3;
 reg rdy1,rdy2,rdy3;
 
 //output data from slaves
-wire [31:0] dout;
+//wire [31:0] dout;
 wire [1:0] respout;
 
-//output data from master to slave
+//output data from master to slave through the output data bus
 wire [31:0] dataout;
 
 //for the arbiter part
 
-reg [1:0] response;
-reg split,ready,busreq_1,busreq_2,read_write;
+reg [1:0] response; // response fromk the slave
+//reg split,ready,busreq_1,busreq_2,read_write;
+reg split,ready,start; //split request from the slave
    // reg ready,grant_1,grant_2;
 
+//for register bank
+wire [1:0] sr,dr,srA;
+wire [31:0] bus_din;
+wire [31:0] bus_dout;
+wire [15:0] Abus;
+//wire rw,rwA;
+//wire read_write,busreq_1,busreq_2;
                 
-//data_path dpt1 (hsel_0,hsel_1,hsel_2,address,Aout,sel1,sel2,mux1,rst,data_in1,data_in2,clk);
-
-data_path dpt(slave_0,slave_1,slave_2,address,Aout,sel1,sel2,mux1,rst,data_in1,data_in2,clk,
+/*data_path dpt(slave_0,slave_1,slave_2,address,Aout,sel1,sel2,mux1,rst,data_in1,data_in2,clk,
                                 sel3,sel4,mux2,data_in3,data_in4,
                                 rdin1,rdin2,rdin3,resp1,resp2,resp3,rdy1,rdy2,rdy3,dout,rdyout,respout,
+                                dataout, Dout); */
+
+data_path dpt(slave_0,slave_1,slave_2,address,Aout,sel1,sel2,mux1,rst,Abus,clk,
+                                sel3,sel4,mux2,bus_dout,
+                                rdin1,rdin2,rdin3,resp1,resp2,resp3,rdy1,rdy2,rdy3,bus_din,rdyout,respout,
                                 dataout, Dout);
-                                
-                               
+                            
 
 control_states cpt1(sel1,sel2,sel3,sel4,mux2,clk,mux1,rst,Aout,Dout,
                             busreq_1,busreq_2,grant_1,grant_2,split,response,ready,read_write,error);
+
+data_path_master master_1(bus_dout,Abus,bus_din,clk,sr,dr,rw,srA,rwA,reset);
+
+control_path_master master_1_control(sr,dr,srA,rw,rwA,read_write,busreq_1,busreq_2,grant_1,grant_2,clk,rst,start);
+
+
 
 initial
     begin
@@ -64,16 +90,30 @@ initial
    
      //   rst = 1'b1; #1;
 
-        data_in1 = 16'b0010000000001000;  //slave one select h2008
-        data_in2 = 16'b0100000000001000; //slave 2 select h4008
+       // data_in1 = 16'b0010000000001000;  //slave one select h2008
+//data_in2 = 16'b0100000000001000; //slave 2 select h4008
 
-        rdin1 = 50;
+  //  Abus = 16'b0010000000001000;
+
+       rdin1 = 50;
         rdin2 = 0;
         resp1 = 2'b01;
         resp2 = 2'b11;
 
-        rdy1 = 1;
+      rdy1 = 1;
         rdy2 = 0;
+
+      rst = 0;
+       #10    split = 1'b0;
+              ready = 1;
+     
+     #10  response = 2'b00;
+  #10 start = 1;
+
+ 
+
+      //  read_write = 0;
+        
 
      /*   data_in3 = 567; #20;
         data_in4 = 434; #20;
@@ -95,8 +135,7 @@ initial
         //for arbiter read_write: 1 - write / 0 - read
 
       //  #20 rst = 1;
-        rst = 0;
-
+        
     /*    #100 rst = 1;
         #100 rst = 0;
 
@@ -121,6 +160,21 @@ initial
 
 
      */
+    
+    #10 rst = 0;
+
+ // test datapath_master
+/*#10
+    sr = 2'b01;
+    srA= 2'b01;
+    dr = 2'b01;
+
+    rw = 1;
+    rwA= 1;
+#50
+
+    rw = 0;
+
 
   #10  busreq_2 = 1;
     split = 1'b0;
@@ -131,7 +185,10 @@ initial
     ready = 0;
 #30
     ready = 1;
-    busreq_2 = 0;
+*/
+//.....................................................................
+
+/*    busreq_2 = 0;
     busreq_1 = 0;
 
 #20
@@ -143,7 +200,7 @@ initial
     busreq_1 = 0;
 #20
     busreq_2 = 1;
-    read_write = 1'b0;
+    read_write = 1'b0; */
 
 //...............................................................................................................
     //writing to slave1 by the master1 from idle state

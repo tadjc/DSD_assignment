@@ -109,7 +109,7 @@ initial
      
      #10  response = 2'b00;
   #10 start = 1;
-
+    #25 ready = 0;
  
 
       //  read_write = 0;

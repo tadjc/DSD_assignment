@@ -19,27 +19,37 @@ always @(posedge clk)
         case (state)
             s0: if (start) 
                     begin
-                         busreq_1 <= 1;
-                    if (grant_1)
-                         state <= s1;
+                        busreq_1 <= 1;
+                        read_write <= 1'b1;
+                        if(grant_1)
+                            state <= s1;
+                        else    
+                            state <= s0;
                     end
-            s1: state <= s2;
-            s2: state <= s3;
-            s3: state <= s4;
-            s4: state <= s0;
-            default: state <= s0;
+                else
+                    state <= s0;  
+                    
+            s1: 
+                    state <= s1;
+                   
+            
+          //  state <= s2;
+        //    s2: state <= s3;
+         //   s3: state <= s4;
+        //    s4: state <= s0;
+               default: state <= s0;
         endcase
     end
 
 always @(state)
     begin
         case (state)
-            s0:begin #10 busreq_1=0; busreq_2 = 0; read_write = 0; rw=0; rwA = 0;sr =2'bzz;dr=2'bzz;srA = 2'bzz; end
-            s1:begin #10 read_write = 1; rw=1; rwA = 1;sr =2'b01;dr=2'bzz;srA = 2'b01; end 
+            s0:begin  busreq_1=0; busreq_2 = 0; rw=0; rwA = 0;sr =2'bzz;dr=2'bzz;srA = 2'bzz; end
+            s1:begin  srA = 2'b01;rwA = 1;rw=1; sr =2'b01;dr=2'bzz; end 
      //       s2: begin #1 busreq_1=1; busreq_2 = 0; read_write = 0; rw=0; rwA = 1;sr = z;dr=0;srA = 1;end
      //       s3: begin #1 busreq_1=0; busreq_2 = 0; read_write = z; rw=z; rwA = z;sr = 3;dr=z;srA = 3; end
      //       s4: begin #1 busreq_1=0; busreq_2 = 0; read_write = z; rw=z; rwA = z;sr = 3;dr=z;srA = 3; end
-            default: begin #100 busreq_1=0; busreq_2 = 0; read_write = 0; rw=0; rwA = 0;sr =2'bzz;dr=2'bzz;srA = 2'bzz; end
+            default: begin busreq_1=0; busreq_2 = 0; rw=0; rwA = 0;sr =2'bzz;dr=2'bzz;srA = 2'bzz; end
         
         endcase
 

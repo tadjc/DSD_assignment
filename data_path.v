@@ -48,6 +48,15 @@ module data_path(slave_0,slave_1,slave_2,address,Aout,sel1,sel2,mux1,rst,Abus,cl
     assign data_in3 = bus_dout;
     assign data_in4 = bus_dout;
 //...................................................................................
+wire [31:0] slave1_in;
+assign slave1_in = rdin1;
+
+
+
+
+
+
+
 
 
     wire hsel_0,hsel_1,hsel_2;
@@ -88,7 +97,7 @@ module data_path(slave_0,slave_1,slave_2,address,Aout,sel1,sel2,mux1,rst,Abus,cl
 
 // read data mux
 
-    MUXR readMUX(dout,rdyout,respout,rdin1,rdin2,rdin3,rdy1,rdy2,rdy3,resp1,resp2,resp3,seld);
+    MUXR readMUX(dout,rdyout,respout,slave1_in,rdin2,rdin3,rdy1,rdy2,rdy3,resp1,resp2,resp3,seld);
 
 
 

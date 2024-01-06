@@ -1,8 +1,8 @@
 module control_states(sel1,sel2,sel3,sel4,mux2,clk,mux1,rst,Aout,Dout,
-                            busreq_1,busreq_2,grant_1,grant_2,split,response,ready,read_write,error);
+                            busreq_1,busreq_2,grant_1,grant_2,split,rdyout,respout,read_write,error);
 
-input clk,rst,busreq_1,busreq_2,split,ready,read_write;
-input [1:0] response;
+input clk,rst,busreq_1,busreq_2,split,rdyout,read_write;
+input [1:0] respout;
 output reg sel1,sel2,mux1,sel3,sel4,mux2,Aout,Dout,grant_1,grant_2,error;
 
 
@@ -11,6 +11,13 @@ parameter OKAY = 2'b00, ERROR = 2'b01, RETRY = 2'b10, SPLIT = 2'b11;
 
 reg [2:0] state;
 parameter s0=3'b000, s1=3'b001, s2=3'b010, s3=3'b011, s4=3'b100;
+
+wire ready;
+wire [1:0] respout;
+
+assign ready = rdyout;
+assign response = respout;
+
 
 always @(posedge clk or posedge rst)
     begin
@@ -23,7 +30,7 @@ always @(posedge clk)
         case (state)
             s0: if(~rst)
                     begin
-                        case ({busreq_2,busreq_1})
+                        casex ({busreq_2,busreq_1})
                             M1: begin
                                     if(ready==1 && split ==0 && response == 2'b00 && read_write == 1) //1 - write / 0 - read
                                         begin
@@ -40,7 +47,7 @@ always @(posedge clk)
                                             state <= s2;
                                         end
                                     else
-                                        state <= s0;
+                                       state <= s1;
                                 end
 
                             M11: begin

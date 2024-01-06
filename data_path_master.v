@@ -1,15 +1,15 @@
-module data_path_master(bus_dout,Abus,bus_din,clk,sr,dr,rw,srA,rwA,reset);
+
+module data_path_master(bus_dout,Abus,bus_din,clk,sr,dr,rw,srA,rwA,rst);
 
 
-input [31:0] bus_din;
-output [31:0] bus_dout;
-output [15:0] Abus;
+
+input [31:0] bus_din; // data in from slave
+output [31:0] bus_dout; //data out from master
+output [15:0] Abus; //address out from master
 
 input [1:0] sr,dr,srA;
-input clk,rw,rwA,reset;
+input clk,rw,rwA,rst;
 
-wire [31:0] x,y,p,q;
-wire [15:0] r,s;
 
 
 

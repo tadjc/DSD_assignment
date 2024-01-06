@@ -6,10 +6,10 @@ reg [15:0] R0, R1, R2, R3;
 
 initial begin
 
-R0 = 16'h100A;
-R1 = 16'h200B;
-R2 = 16'h300C;
-R3 = 16'h0000;
+R0 = 16'h100A; //send data to slave 1
+R1 = 16'h2001; //send data to slave 2
+R2 = 16'h300C; //send data to slave 3
+R3 = 16'h0000; 
 end
 
 always @(posedge clk)

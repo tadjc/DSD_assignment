@@ -14,10 +14,6 @@ always @(posedge clk)
                 2: R2 <= hrdatax1;
                 3: R3 <= hrdatax1;
             endcase
-
-    
-
    end
-
 
 endmodule
